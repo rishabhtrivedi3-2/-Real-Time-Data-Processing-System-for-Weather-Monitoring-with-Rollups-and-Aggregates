@@ -10,12 +10,12 @@ const WeatherDashboard = () => {
 
             const response = await axios.get("http://localhost:5000"); // Replace "delhi" with your desired city
             setWeatherData(response.data);
-            console.log(weatherData)
-            generateChartData(weatherData[0]);
+            generateChartData(weatherData);
         }
 
         fetchWeatherData();
     }, []);
+    console.log(weatherData)
     if (!weatherData) {
         return <p>Loading weather data...</p>;
     }
